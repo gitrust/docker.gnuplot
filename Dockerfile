@@ -57,8 +57,6 @@ RUN cd libcerf && \
         make install
 
 # gnuplot
-#RUN git clone https://git.code.sf.net/p/gnuplot/gnuplot-main gnuplot
-#RUN cd gnuplot && git checkout tags/5.4.5 -b branch-5.4.5
 RUN curl -L https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.5/gnuplot-5.4.5.tar.gz/download > gnuplot-5.4.5.tar.gz
 RUN tar -xvf gnuplot-5.4.5.tar.gz
 RUN cd gnuplot-5.4.5 \
@@ -85,9 +83,9 @@ RUN apk --no-cache add \
         pango \
         readline
 
-# Copy resources to second stage  
-COPY --from=builder /usr/local/bin/gnuplot /usr/local/bin/gnuplot
+# Copy resources to second stage
 COPY --from=builder /usr/share/fonts/truetype/msttcorefonts /usr/share/fonts/truetype/msttcorefonts
+COPY --from=builder /usr/local/bin/gnuplot /usr/local/bin/gnuplot
 COPY --from=builder /usr/local/lib/libcerf.* /usr/local/lib/
 COPY --from=builder /usr/local/share/doc /usr/local/share/doc
 COPY --from=builder /usr/local/share/gnuplot /usr/local/share/gnuplot
