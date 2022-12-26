@@ -1,7 +1,7 @@
 
 
 build:
-	docker build  -t docker.gnuplot .
+	docker build  -t gitrust/gnuplot .
 
 run:
-	docker run --rm -v %cd%:/home/docker:rw -it docker.gnuplot
+	docker run --rm -v %cd%:/home/docker:rw -it gitrust/gnuplot

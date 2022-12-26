@@ -6,24 +6,31 @@ This is an Alpine based gnuplot (v5.4.5) docker image.
 
 - https://github.com/gitrust/docker.gnuplot
 - http://www.gnuplot.info
+- https://pango.gnome.org/
+- 
 
 # How to use this image
 
 ```
-docker run --rm -v $(pwd):/home/docker:rw gitrust/docker.gnuplot
+docker run --rm -v $(pwd):/home/docker:rw gitrust/gnuplot
 ```
 
 An example with a script
 ```
-docker run --rm -v $(pwd):/home/docker:rw gitrust/docker.gnuplot -e "set terminal png; set output 'out.png'; plot sin(x); replot"
+docker run --rm -v $(pwd):/home/docker:rw gitrust/gnuplot -e "set terminal png; set output 'out.png'; plot sin(x); replot"
 ```
 
 # Build Configuration
 
+Support for 
+
+- cairo (cairo terminals)
+- pango (library for text layout and rendering)
+
 Options compiled into gnuplot binary
 
 ```
-$ docker run --rm -v $(pwd):/home/docker:rw docker.gnuplot -e "show version long"
+$ docker run --rm -v $(pwd):/home/docker:rw gitrust/gnuplot -e "show version long"
 
         G N U P L O T
         Version 5.4 patchlevel 5    last modified 2022-09-28

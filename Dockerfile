@@ -72,7 +72,6 @@ RUN cd gnuplot-5.4.5 \
 # Second Stage
 FROM alpine:3.17.0
 RUN apk --no-cache add \
-        ca-certificates \
         libgcc \
         cairo \
         libgd \
