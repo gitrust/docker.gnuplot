@@ -11,3 +11,4 @@
 *.conf    eol=lf
 *.bat     eol=cr
 Dockerfile  text
+Makefile  eol=lf
