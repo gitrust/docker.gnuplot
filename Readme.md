@@ -2,9 +2,18 @@
 
 This is a [gnuplot](http://www.gnuplot.info) (v5.4.5) docker image based on [alpine](https://hub.docker.com/_/alpine) (v3.17.0).
 
-# Quick Reference
+# Quick Start
+
+```
+docker pull gitrust/gnuplot
+
+docker run --rm -v $(pwd):/home/docker:rw gitrust/gnuplot
+```
+
+# Reference
 
 - https://github.com/gitrust/docker.gnuplot
+- https://hub.docker.com/repository/docker/gitrust/gnuplot
 - http://www.gnuplot.info
 - https://pango.gnome.org
 - https://gnuplot.sourceforge.net/demo
@@ -27,12 +36,13 @@ docker run --rm -v $(pwd):/home/docker:rw gitrust/gnuplot chart.gnu
 
 # Build Configuration
 
-gnuplot was compiled with additional plugin and tool support
+gnuplot was compiled with additional plugins and tool support
 
 Support for 
 
 - cairo (cairo terminals)
 - pango (library for text layout and rendering)
+- libgd (Font handling for the png, gif, jpeg, and sixelgd terminals)
 
 Options compiled into gnuplot binary
 
@@ -100,4 +110,22 @@ HELPFILE           = "/usr/local/share/gnuplot/5.4/gnuplot.gih"
               x11  X11 Window System interactive terminal
              xlib  X11 Window System (dump of gnuplot_x11 command stream)
             xterm  Xterm Tektronix 4014 Mode
+```
+
+# Available Fonts
+
+Additional installed Microsoft TrueType core fonts
+
+```
+Andale Mono
+Arial Black
+Arial (Bold, Italic, Bold Italic)
+Comic Sans MS (Bold)
+Courier New (Bold, Italic, Bold Italic)
+Georgia (Bold, Italic, Bold Italic)
+Impact
+Times New Roman (Bold, Italic, Bold Italic)
+Trebuchet (Bold, Italic, Bold Italic)
+Verdana (Bold, Italic, Bold Italic)
+Webdings
 ```

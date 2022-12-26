@@ -61,11 +61,9 @@ RUN curl -L https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.5/gnuplot
 RUN tar -xvf gnuplot-5.4.5.tar.gz
 RUN cd gnuplot-5.4.5 \
         && ./configure \
-                --disable-x11-mbfonts \
-                --disable-x11-external \
                 --disable-raise-console \
-                --disable-wxwidgets \
                 --without-lua \
+                --with-qt=no \
         && make \
         && make install
 
@@ -89,6 +87,7 @@ COPY --from=builder /usr/local/lib/libcerf.* /usr/local/lib/
 COPY --from=builder /usr/local/share/doc /usr/local/share/doc
 COPY --from=builder /usr/local/share/gnuplot /usr/local/share/gnuplot
 COPY --from=builder /usr/local/share/man /usr/local/share/man
+COPY --from=builder /usr/local/libexec/gnuplot /usr/local/libexec/gnuplot
 
 ENV GDFONTPATH=/usr/share/fonts/truetype/msttcorefonts/
 
