@@ -1,0 +1,13 @@
+* text=auto
+
+
+*.xml     text
+*.xaml    text
+*.txt     text
+*.md      text
+*.yaml    text
+*.yml     text
+*.sh      eol=lf
+*.conf    eol=lf
+*.bat     eol=cr
+Dockerfile  text
