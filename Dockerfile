@@ -1,7 +1,5 @@
 FROM alpine:3.17.0 AS builder
 
-MAINTAINER "gitrust"
-
 # Fonts      
 RUN apk add --no-cache fontconfig \
         msttcorefonts-installer && \
